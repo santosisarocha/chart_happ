@@ -8,6 +8,12 @@ import edit_grill from '../../image/Monitoramento/edit_grill.png';
 import edit_de_bem_com_vida from '../../image/Monitoramento/edit_de_bem_com_vida.png';
 import edit_moda from '../../image/Monitoramento/edit_moda.png';
 import edit_receita_chefe from '../../image/Monitoramento/edit_receita_chefe.png';
+import chefe from '../../image/Cardapio/chefe.png';
+import Folha from '../../image/Cardapio/Folha.png';
+import Grill from '../../image/Cardapio/Grill.png';
+import Panela from '../../image/Cardapio/Panela.png';
+
+
 
 import { UserData } from '../../Data.js';
 import { BiFontSize } from 'react-icons/bi';
@@ -184,16 +190,51 @@ function LayoutGraphicEdit() {
       
       {/* Popup */}
       {isPopupOpen && (
-        <div style={popupStyle}>
-          <div>
-            {/* <h2>Edit Image: {selectedImage}</h2> */}
-            <h1>Filas do Restaurante:</h1>
-            <p>This is a placeholder for editing {selectedImage}.</p>
-            <button onClick={closePopup}>Close</button>
-          </div>
-        </div>
-      )}
-    </div>
+         <div style={popupStyle}>
+         <div>
+           <h1 style={popupHeadingStyle}>Filas do Restaurante:</h1>
+           {/* Buttons Container */}
+           <div style={popupButtonsContainer}>
+             <div style={popupButtomModa}>
+               <img
+                 src={Panela}
+                 alt="Panela"
+                 style={{ width: '20%', height: 'auto', marginRight: '10px' }}
+               />
+               <h1   >Moda da casa</h1>
+             </div>
+             <div style={popupButtomVida}>
+               <img
+                 src={Folha}
+                 alt="Folha"
+                 style={{ width: '15%', height: 'auto', marginRight: '10px' }}
+               />
+               <h1 >De bem com a vida</h1>
+             </div>
+             <div style={popupButtomReceita}>
+               <img
+                 src={chefe}
+                 alt="chefe"
+                 style={{ width: '10%', height: 'auto', marginRight: '10px' }}
+               />
+               <h1>Receita do chefe</h1>
+             </div>
+             <div style={popupButtomGrill}>
+               <img
+                 src={Grill}
+                 alt="grill"
+                 style={{ width: '12%', height: 'auto', marginRight: '10px' }}
+               />
+               <h1>Grill e Bem estar</h1>
+             </div>
+           </div>
+           <div style={closeButtonContainer}>
+             <button onClick={closePopup} style={closeButtonStyle}>Salvar</button>
+           </div>
+         </div>
+       </div>
+     )}
+   </div>
   );
 }
 
@@ -211,5 +252,88 @@ const popupStyle = {
   boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
   
 };
+const popupHeadingStyle = {
+  fontSize: '19.65px',
+  color: '#333',
+  marginTop:'-3.5%',
+  textAlign: 'center',
+  marginBottom: '20px',
+  fontWeight: 'bold',
+  fontFamily: 'Arial, sans-serif',
+};
+const popupButtonsContainer = {
+  display: 'flex',
+  justifyContent: 'space-around', // Aligns buttons side by side with space between
+  alignItems: 'center',
+  marginBottom: '20px',
+};
+
+const popupButtomModa = {
+  width: '245px',
+  height: '85px',
+  backgroundColor: '#007BC0',
+  textAlign: 'center',
+  padding: '10px',
+  marginRight: '10px',
+  color: '#FFFFFF',
+  display: 'flex',             // Flexbox for alignment
+  alignItems: 'center',        // Center vertically
+  justifyContent: 'center',    // Center horizontally
+};
+
+const popupButtomVida = {
+  width: '245px',
+  height: '85px',
+  backgroundColor: '#00884A',
+  textAlign: 'center',
+  padding: '10px',
+  marginRight: '10px',
+  color: '#FFFFFF',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+};
+
+const popupButtomReceita = {
+  width: '245px',
+  height: '85px',
+  backgroundColor: '#12818F',
+  textAlign: 'center',
+  padding: '10px',
+  marginRight: '10px',
+  color: '#FFFFFF',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+};
+
+const popupButtomGrill = {
+  width: '245px',
+  height: '85px',
+  backgroundColor: '#9E2896',
+  textAlign: 'center',
+  padding: '10px',
+  color: '#FFFFFF',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+};
+
+const closeButtonContainer = {
+  display: 'flex',
+  justifyContent: 'center',
+  marginTop: '20px',
+};
+
+const closeButtonStyle = {
+  backgroundColor: 'black',
+  color: 'white',
+  border: 'none',
+  padding: '5px 20px',
+  cursor: 'pointer',
+  fontSize: '16px',
+  
+};
+
 
 export default LayoutGraphicEdit;
